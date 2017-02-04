@@ -191,9 +191,9 @@ Fallback to `default-directory.' if not within a project."
 (defun inf-js-eval-defun (&optional and-go)
   (interactive "P")
   (save-excursion
-    (end-of-defun)
+    (js2-end-of-defun)
     (let ((end (point)) (case-fold-search t))
-      (beginning-of-defun)
+      (js2-beginning-of-defun)
       (inf-js-eval-region (point) end and-go))))
 
 (defun inf-js-eval-buffer (&optional and-go)
