@@ -179,7 +179,7 @@ Fallback to `default-directory.' if not within a project."
   (interactive "r\nP")
   ;; replace multiple newlines at the end of the region by a single one
   ;; or add one if there was no newline
-  (let ((str (concat (format "%s:%d:" (buffer-name) (line-number-at-pos start t))
+  (let ((str (concat (format "[%s:%d]" (buffer-name) (line-number-at-pos start t))
                      (replace-regexp-in-string
                       "[\n]*\\'" "\n"
                       (buffer-substring-no-properties start end)))))
